@@ -1,2 +1,67 @@
 /*Maak hier jouw CSS!*/
-g
+*   {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body    {
+    background-color: darkgrey;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-template-areas:
+    "header bigbox bigbox"
+    "article bigbox bigbox"
+    "article highbox littlebox"
+    "article highbox ."
+    "footer footer footer";
+    gap: 10px;
+}
+
+header  {
+    background-color: purple;
+    grid-area: header;
+}
+
+article     {
+    background-color: aquamarine;
+    grid-area: article;
+}
+
+.bigbox  {
+    background-color: burlywood;
+    grid-area: bigbox;
+}
+
+.littlebox  {
+    background-color: hotpink;
+    grid-area: littlebox;
+}
+
+.highbox  {
+    background-color: greenyellow;
+    grid-area: highbox;
+}
+
+footer  {
+    background-color: olive;
+    grid-area: footer;
+}
+
+@media (max-width: 576px)    {
+    body    {
+        grid-template-columns:  1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+        "header"
+        "article"
+        "bigbox"
+        "littlebox"
+        "highbox"
+        "."
+        "footer";
+    }
+}
